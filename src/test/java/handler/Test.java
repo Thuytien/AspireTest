@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -251,6 +252,19 @@ public class Test {
 	public static String getElementAttribute(String elementXpath, String attributeType) {
 		WebElement element = waitElement(elementXpath);
 		return element.getAttribute(attributeType);
+	}
+	
+	public static String getElementAttribute(WebElement element, String attributeType) {
+		return element.getAttribute(attributeType);
+	}
+	
+	public static void setElementAttribute (String elementXpath, String attributeType, String value) {
+		WebElement element = waitElement(elementXpath);
+		JavascriptExecutor js = (JavascriptExecutor) pageBrowser.driver;
+		js.executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", 
+                element,  
+                attributeType,
+                value);
 	}
 	
 	public static void checkElementAttribute(String elementXpath, String attributeType, String expected) {

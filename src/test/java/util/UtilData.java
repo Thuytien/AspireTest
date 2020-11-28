@@ -54,6 +54,11 @@ public class UtilData {
 		}
 		return sb.toString();
 	}
+	
+	public static int generateNumber(int length) {
+		String number = generateNumericString(length);
+		return Integer.parseInt(number);
+	}
 
 	public static String generateAlphaNumericString(int length) {
 		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
@@ -70,11 +75,6 @@ public class UtilData {
 		Random ran = new Random();
 		int randomNum = ran.nextInt((max - min) + 1) + min;
 		return randomNum;
-	}
-
-	public static String randIpAddress() {
-		Random r = new Random();
-		return r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256) + "." + r.nextInt(256);
 	}
 
 	public static String[] splitString(String parentString, String text, int number) {
@@ -101,7 +101,4 @@ public class UtilData {
 
 	}
 
-	public static String generateAlphabeticString(int count) {
-		return RandomStringUtils.randomAlphabetic(count);
-	}
 }
