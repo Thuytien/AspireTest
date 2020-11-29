@@ -175,7 +175,7 @@ public class page_Registration {
 		String gender = genders.get(UtilData.randInt(0, 1));
 		Test.setElementAttribute(genderXpath, "value", gender);
 		Test.clickOutsideElement(genderXpath);
-		Test.clickOnCoordinate(620, 50);
+		
 		System.out.println(gender);
 		System.out.println(Test.getElementAttribute(genderXpath,"value"));
 		
