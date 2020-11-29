@@ -41,6 +41,8 @@ public class page_Registration {
 	
 	//Personal Details
 	//submitBtnXpath
+	String standard_GetStartBtnXpath = "//button[contains (@class,'bg-secondary text-white q-btn--actionable q-focusable q-hoverable q-btn--wrap')]";
+			
 	private String dobXpath = "//div[@label='Date of Birth']//descendant::input";
 	private String month_yearXpath = "//div//button[contains (@class,'q-btn--no-uppercase')]";
 	private String pre_nextPageXpath = "//div[contains (@class,'col-auto')]//button";
@@ -137,6 +139,11 @@ public class page_Registration {
 		Test.waitPageLoad();
 	}
 	
+	public void goToStandardRegistration() {
+		Test.clickElement(standard_GetStartBtnXpath);
+		Test.waitPageLoad();
+	}
+
 	public void enterOTPCodeStep2(String code) {
 		Test.clickElement(otpPhoneXpath);
 		for (int i=1; i<5; i++) {
@@ -168,6 +175,7 @@ public class page_Registration {
 		String gender = genders.get(UtilData.randInt(0, 1));
 		Test.setElementAttribute(genderXpath, "value", gender);
 		Test.clickOutsideElement(genderXpath);
+		Test.clickOnCoordinate(620, 50);
 		System.out.println(gender);
 		System.out.println(Test.getElementAttribute(genderXpath,"value"));
 		

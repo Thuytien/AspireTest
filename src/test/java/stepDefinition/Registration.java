@@ -36,9 +36,9 @@ public class Registration extends BaseDef{
     	page.submitForm();
     }
     
-    @And ("^User moves to Standard Registration$")
+    @And ("^User goes to Standard Registration$")
     public void goToStandardRegistration() throws Throwable{
-    	page.submitForm();
+    	page.goToStandardRegistration();
     }
     
     @And ("^User gets start$")
