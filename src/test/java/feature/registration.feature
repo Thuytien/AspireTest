@@ -11,5 +11,8 @@ Feature: Registration feature
     And User moves to next step
     When User continues with registered business in Singapore
     And User moves to Standard Registration
+    And User gets start
+    When User fills in Personal Details form
+    And User moves to next step
     
     

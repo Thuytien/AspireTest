@@ -284,6 +284,12 @@ public class Test {
 		WebElement theElement = waitElement(elementXpath);
 		return theElement.getText();
 	}
+	
+	public static void setElementText(String elementXpath, String value) {
+		WebElement theElement = waitElement(elementXpath);
+		JavascriptExecutor js = (JavascriptExecutor) pageBrowser.driver;
+		js.executeScript("arguments[0].innerHTML = arguments[1];", theElement, value);
+	}
 
 	public static void checkElementTextDisplayed(String elementXpath, String expectedText) {
 		waitElement(elementXpath);

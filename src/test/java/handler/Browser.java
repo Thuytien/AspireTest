@@ -19,7 +19,7 @@ public class Browser {
 		 // Setup your path of Chrome Driver
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
-		 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 	public void clearCurrentDomainCookie() {

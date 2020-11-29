@@ -40,5 +40,15 @@ public class Registration extends BaseDef{
     public void goToStandardRegistration() throws Throwable{
     	page.submitForm();
     }
+    
+    @And ("^User gets start$")
+    public void getStart() throws Throwable{
+    	page.submitForm();
+    }
+    
+    @When ("^User fills in Personal Details form$")
+    public void fillInPersonalDetailsForm() throws Throwable{
+    	page.fillInPersonalDetailsForm();
+    }
 
 }
